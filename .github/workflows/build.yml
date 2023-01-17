@@ -1,9 +1,15 @@
+name: Spring Boot CI
+
 on:
   push:
 
 jobs:
-  first-job:
+  build-and-test:
+    name: Build Version
     runs-on: ubuntu-latest
     container: maven:3.8.7-amazoncorretto-17
     steps:
+      - uses: action/checkout@v2
       - run: mvn --version
+      - run: ls -l
+      - run: mvn install
