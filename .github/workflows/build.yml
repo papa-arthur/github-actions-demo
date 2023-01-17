@@ -4,5 +4,6 @@ on:
 jobs:
   first-job:
     runs-on: ubuntu-latest
+    container: maven:3.8.7-amazoncorretto-17
     steps:
       - run: mvn --version
